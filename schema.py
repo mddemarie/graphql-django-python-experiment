@@ -9,4 +9,18 @@ class Query(graphene.ObjectType):
 schema = graphene.Schema(query=Query)
 
 result = schema.execute('{ hello }')
-print(result.data['hello'])
+print(result.data)
+
+
+class Episode(graphene.Enum):
+    NEWHOPE = 4
+    EMPIRE = 5
+    JEDI = 6
+
+    @property
+    def description(self):
+        if self == Episode.NEWHOPE:
+            return 'New Hope Episode'
+        return 'Other episode'
+
+Episode = graphene.Enum('Episode', [('NEWHOPE', 4), ('EMPIRE', 5), ('JEDI', 6)])

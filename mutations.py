@@ -23,3 +23,13 @@ class Query(graphene.ObjectType):
     person = graphene.Field(Person)
 
 schema = graphene.Schema(query=Query, mutation=MyMutations)
+result = schema.execute('''
+    query createPerson:($id: ID) {
+        person(id: $id) {
+            id
+            name
+            age
+        }
+    }''',
+    variable_values={'id': 12, 'name': 'Marie', 'age': 30})
+print(result.data)

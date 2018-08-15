@@ -40,3 +40,11 @@ Install the project packages including Django:
 ```
 (venv) $ pip install -r requirements.txt
 ```
+
+##### On Mac
+
+Install GraphiQL - GUI for editing and testing GraphQL queries and mutations:
+
+```
+brew cask install graphiql
+```

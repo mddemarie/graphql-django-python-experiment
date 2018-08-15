@@ -4,6 +4,8 @@ I will follow the Graphene documentation and experiment with GraphQL integration
 
 You can find the source of my knowledge here: <http://docs.graphene-python.org/en/latest/> and here: <http://docs.graphene-python.org/projects/django/en/latest/>
 
+Skipping the chapter about Relay.
+
 The more information is coming soon!
 
 ## SETUP

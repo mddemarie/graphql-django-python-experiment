@@ -26,6 +26,11 @@ class Query(graphene.AbstractType):
     all_products = graphene.List(ProductType)
     all_transactions = graphene.List(TransactionType)
 
+    family = graphene.Field(FamilyType, id=graphene.Int())
+    location = graphene.Field(LocationType, id=graphene.Int())
+    product = graphene.Field(ProductType, id=graphene.Int())
+    transaction = graphene.Field(TransactionType, id=graphene.Int())
+
     def resolve_all_families(self, args):
         return Family.objects.all()
     
@@ -37,3 +42,15 @@ class Query(graphene.AbstractType):
 
     def resolve_all_transactions(self, args):
         return Transaction.objects.all()
+
+    def resolve_family(self, args, id):
+        return Family.objects.get(pk=id)
+
+    def resolve_location(self, args, id):
+        return Location.objects.get(pk=id)
+
+    def resolve_product(self, args, id):
+        return Product.objects.get(pk=id)
+
+    def resolve_transaction(self, args, id):
+        return Transaction.objects.get(pk=id)

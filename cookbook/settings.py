@@ -43,10 +43,7 @@ INSTALLED_APPS = [
 ]
 
 SCHEMA = {
-    'SCHEMA': [
-        'cookbook.schema.schema',
-        'inventory.schema.schema'
-    ]
+    'SCHEMA': 'cookbook.schema.schema'
 }
 
 FIXTURE_DIRS = (

@@ -26,14 +26,14 @@ class Query(graphene.AbstractType):
     all_products = graphene.List(ProductType)
     all_transactions = graphene.List(TransactionType)
 
-    def resolve_all_families(self, args, context, info):
+    def resolve_all_families(self, args):
         return Family.objects.all()
     
-    def resolve_all_locations(self, args, context, info):
+    def resolve_all_locations(self, args):
         return Location.objects.all()
 
-    def resolve_all_products(self, args, context, info):
+    def resolve_all_products(self, args):
         return Product.objects.all()
 
-    def resolve_all_transactions(self, args, context, info):
+    def resolve_all_transactions(self, args):
         return Transaction.objects.all()
